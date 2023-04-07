@@ -1,16 +1,16 @@
-id: apache-loadbalancer
+id: kube-dashboard
 
 info:
-  name: Apache Load Balancer Manager
+  name: Kubernetes Dashboard Detection
   author: notnotnotveg
   severity: informative
 
 requests:
   - method: GET
     path:
-      - "{{BaseURL}}/balancer-manager"
+      - "{{BaseURL}}/dashboard/#!/namespace?namespace=default"
     matchers:
       - type: word
         words:
-          - "Load Balancer Manager"
+          - "kubernetesDashboard"
         part: body

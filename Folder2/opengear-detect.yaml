@@ -1,16 +1,16 @@
-id: apache-loadbalancer
+id: Opengear Console Detection
 
 info:
-  name: Apache Load Balancer Manager
+  name: Opengear Console Detection
   author: notnotnotveg
   severity: informative
 
 requests:
   - method: GET
     path:
-      - "{{BaseURL}}/balancer-manager"
+      - "{{BaseURL}}/"
     matchers:
       - type: word
         words:
-          - "Load Balancer Manager"
+          - "Opengear Management Console"
         part: body

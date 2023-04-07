@@ -1,16 +1,17 @@
-id: apache-loadbalancer
+id: ffserver detect
 
 info:
-  name: Apache Load Balancer Manager
+  name: FFServer Detect
   author: notnotnotveg
   severity: informative
 
 requests:
   - method: GET
     path:
-      - "{{BaseURL}}/balancer-manager"
+      - "{{BaseURL}}:8090/status.html"
+      - "{{BaseURL}}/status.html"
     matchers:
       - type: word
         words:
-          - "Load Balancer Manager"
+          - "<title>ffserver Status"
         part: body

@@ -1,16 +1,16 @@
-id: apache-loadbalancer
+id: graphite-browser-detect 
 
 info:
-  name: Apache Load Balancer Manager
+  name: graphite-browser-detect
   author: notnotnotveg
   severity: informative
 
 requests:
   - method: GET
     path:
-      - "{{BaseURL}}/balancer-manager"
+      - "{{BaseURL}}/"
     matchers:
       - type: word
         words:
-          - "Load Balancer Manager"
+          - "<title>Graphite Browser"
         part: body

@@ -1,29 +1,29 @@
-id: SQLI-HEADER
+id: SQLI-ERROR
 
 info:
-  name: sqli-header
+  name: sqli-header-error
   author: MR.iambatman
   severity: high
-  description: sqli-header
+  description: sqli-error
 
 requests:
 
   - raw:
       - |
-        GET / HTTP/1.1
+        GET /§sqli§ HTTP/1.1
         Host: {{Hostname}}
         User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0
         §header§: §sqli§
    
       - |
-        POST / HTTP/1.1
+        POST /§sqli§ HTTP/1.1
         Host: {{Hostname}}
         User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0
         §header§: §sqli§
         Content-Type: application/x-www-form-urlencoded
  
       - |
-        PUT / HTTP/1.1
+        PUT /§sqli§ HTTP/1.1
         Host: {{Hostname}}
         User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0
         §header§: §sqli§
@@ -35,9 +35,9 @@ requests:
     
     attack: clusterbomb
     redirects: true
-
-    matchers-condition: and 
-    matchers:
+    
+    matchers-condition: and
+    matchers: 
       - type: regex
         regex:
           # MySQL
