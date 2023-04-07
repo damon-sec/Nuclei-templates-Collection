@@ -1,16 +1,17 @@
-id: apache-loadbalancer
+id: dir-listing
 
 info:
-  name: Apache Load Balancer Manager
+  name: Directory Listing
   author: nithissh
   severity: informative
 
 requests:
   - method: GET
     path:
-      - "{{BaseURL}}/balancer-manager"
+      - "{{BaseURL}}/logs/"
+      - "{{BaseURL}}/etc/"
     matchers:
       - type: word
         words:
-          - "Load Balancer Manager"
+          - "Index of"
         part: body
